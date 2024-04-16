@@ -1,0 +1,151 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 100%), 
+                radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%),
+                linear-gradient(to right, hwb(268 0% 0%), hsl(270, 100%, 56%)); /* Gradient background with radial and linear gradients */
+    background-image: url(Doodle.png);
+    background-blend-mode: screen; /* Blend mode for background */
+    animation: backgroundAnimation 10s infinite linear; /* Animation for background */
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    max-width: 500px;
+    margin: 1% auto;
+    padding: 35px;
+    background-color: rgba(255, 141, 2, 0.762); /* Semi-transparent white background for the container */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Shadow for the container */
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 36px; /* Larger font size for the heading */
+    text-transform: uppercase; /* Uppercase text */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Text shadow for 3D effect */
+    -webkit-text-stroke: #333;
+    -webkit-text-stroke-width: 2px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 30px; /* Larger font size for the heading */
+    text-transform: uppercase; /* Uppercase text */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Text shadow for 3D effect */
+    -webkit-text-stroke: #333;
+    -webkit-text-stroke-width: 2px;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #ffd000; /* Border for the game board */
+    border-radius: 40px;
+    overflow: hidden; /* Hide overflow for the glowing effect */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow for the game board */
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    flex: 1;
+    height: 150px;
+    background-color: #333; /* Dark background color for cells */
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: transparent; /* Transparent text color for X and O */
+}
+
+.cell:hover {
+    background-color: #555; /* Darker background color on hover */
+}
+
+/* X and O marks */
+.x-mark,
+.o-mark {
+    color: #ffea00; /* Neon yellow color */
+    text-shadow: 0 0 10px #ffea00; /* Neon glow effect */
+}
+
+.status {
+    margin-top: 20px;
+    color: #333;
+}
+
+.restart-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.restart-button:hover {
+    background-color: #0056b3;
+}
+
+/* Add styles for the winner modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Center the modal box vertically and horizontally */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Set the width of the modal box */
+}
+
+.centered-text {
+    text-align: center; /* Center align the text */
+}
+
+/* Add styles for the New Game button */
+.new-game-button {
+    display: block;
+    margin: 0 auto; /* Center the button */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745; /* Green background color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.new-game-button:hover {
+    background-color: #218838; /* Darker green color on hover */
+}
